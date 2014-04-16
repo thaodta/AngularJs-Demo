@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TV Show Premieres</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/tvshow.js"></script>
+	<style type="text/css">
+		.menu {
+			width: 400px;
+		}
+		.menu li {
+			background: #009900;
+			color: #fff;
+		}
+		.menu li.selected {
+			color: #000;
+			background: lightgreen;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="MenuController">
+		<button ng-click="toggleMenu()">Toggle Menu</button>
+		<ul ng-show="menuState.show" class="menu">
+			<li ng-repeat="item in menuItems" ng-click="selectItem($index)" ng-class="{selected: selectedIndex == $index}">{{ item }}</li>
+		</ul>
+		<div ng-controller="LoginController">
+			<button ng-click="login()">{{selectedItem()}}</button>
+		</div>
+		<!-- LoginController -->
+	</div>
+</body>
+</html>

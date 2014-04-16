@@ -1,0 +1,10 @@
+[core]
+	bare = true
+	repositoryformatversion = 0
+	filemode = false
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = git@github.com:hoanguyen311/AngularJs-Demo.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	puttykeyfile = D:\\Documents and Settings\\hoa.nguyen\\My Documents\\hoa-vdi.ppk

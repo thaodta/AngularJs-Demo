@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="TutorialApp">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script type="text/javascript" src="underscore-min.js"></script>
+	<script type="text/javascript" src="Controller.js"></script>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div class="content" ng-controller="MainController">
+		<input type="text" ng-model="searchText">
+		<ul>
+			<li ng-repeat="person in people | filter:searchText" ng-show="person.live == true">#{{ person.id }} - {{ person.name }}</li>
+		</ul>
+		<input type="text" ng-model="newPerson">
+		<button ng-click="AddNew()">Add</button>
+	</div>
+</body>
+</html>

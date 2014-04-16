@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TV Show Premieres</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/cart_services.js"></script>
+	<script type="text/javascript" src="js/cart-controller.js"></script>
+	<style type="text/css">
+		.menu {
+			width: 400px;
+		}
+		.menu li {
+			background: #009900;
+			color: #fff;
+		}
+		.menu li.selected {
+			color: #000;
+			background: lightgreen;
+		}
+		.cart-item {
+			background: #dff;
+			margin: 5px 0px;
+		}
+		.cart-item .title {
+			display: block;
+			width: 200px;
+			float: left;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="CartController">
+		<div class="cart-item" ng-repeat="item in items">
+			<span class="title">{{ item.title }}</span>
+			<input type="text" ng-model="item.quantity">
+			<span>{{ item.price | currency }}</span>
+			<span>{{ item.quantity | currency }}</span>
+		</div>
+		<p>Total: {{ bill.totalCart | currency }}</p>
+		<p>Discount: {{ bill.discount | currency }}</p>
+		<p>Sub total: {{ bill.subTotal | currency }}</p>
+		<input type="text" ng-model="a">
+		<input type="text" ng-model="b">
+	</div>
+</body>
+</html>
